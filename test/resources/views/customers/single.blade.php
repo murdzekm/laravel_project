@@ -22,20 +22,27 @@
             @endif
 
             <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Dane klienta</h2>
-            <p>{{ $customer->name }}</p>
-            <p>{{ $customer->address }}</p>
-            <p>{{ $customer->nip }}</p>
-
-            <!-- Portfolio Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Lista faktur
-                powiązanych</h2>
-
             <!-- Icon Divider-->
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
                 <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                 <div class="divider-custom-line"></div>
             </div>
+
+
+            <div class="row align-items-center">
+                <div class="col-6 m-lg-5">
+                    <p>{{ $customer->name }}</p>
+                    <p>{{ $customer->address }}</p>
+                    <p>{{ $customer->nip }}</p>
+                </div>
+
+            </div>
+
+            <!-- Portfolio Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Lista faktur
+                powiązanych</h2>
+
 
             <table class="table table-striped">
                 <thead>
@@ -44,6 +51,7 @@
                     <th scope="col">Numer faktury</th>
                     <th scope="col">Data</th>
                     <th scope="col">Kwota</th>
+                    <th scope="col">Klient</th>
                     <th scope="col">Operacje</th>
                 </tr>
                 </thead>

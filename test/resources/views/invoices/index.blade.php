@@ -50,12 +50,12 @@
                         <td>{{$invoice->total}}</td>
                         <td>{{$invoice->customer->name}}</td>
                         <td><a href="{{ route('invoices.edit', ['id'=> $invoice->id]) }}"
-                               class="btn btn-warning btn-outline-secondary">Edytuj</a>
+                               class="btn btn-warning">Edytuj</a>
                             <form method="POST" action="{{ route('invoices.delete', ['id'=> $invoice->id]) }}">
                                 @csrf
                                 @method('delete')
                             <button type="submit"
-                               class="btn btn-danger btn-outline-dark">Usuń</button>
+                               class="btn btn-danger">Usuń</button>
                         </form></td>
                     </tr>
                 @endforeach

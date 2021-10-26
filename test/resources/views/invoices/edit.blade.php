@@ -29,6 +29,21 @@
                         {{ csrf_field() }}
                             @method('PUT')
                         <!-- Invoice number input-->
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="inputGroupSelect01">Wybierz klienta</label>
+                                <select name="customer" class="form-select" id="inputGroupSelect01">
+                                    <option >Wybierz...</option>
+{{--                                    <option selected value="{{ $invoice->customer_id }}"></option>--}}
+                                    @foreach(\App\Models\Customer::all() as $item)
+                                        @if($item->id == $invoice->customer_id)
+                                            <option selected value="{{$item->id}}">{{$item->name}}</option>
+                                        @else
+                                            <option value="{{$item->id}}">{{$item->name}}</option>                                        @endif
+
+                                    @endforeach
+
+                                </select>
+                            </div>
                         <div class="form-floating mb-3">
                             <input class="form-control" id="number" name="number" type="text" value="{{ $invoice->number }}"
                                    placeholder="Numer faktury"

@@ -47,6 +47,7 @@ class InvoicesController extends Controller
         $invoice->number = $request->number;
         $invoice->date = $request->date;
         $invoice->total = $request->total;
+        $invoice->customer_id = $request->customer;
 
         $invoice->save();
 

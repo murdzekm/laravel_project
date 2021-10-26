@@ -49,12 +49,12 @@
                         <td>{{$customer->nip}}</td>
                         <td>
                             <a href="{{ route('customers.edit', ['klienci'=> $customer->id]) }}"
-                               class="btn btn-warning btn-outline-secondary">Edytuj</a>
+                               class="btn btn-warning ">Edytuj</a>
                             <form method="POST" action="{{ route('customers.destroy', ['klienci'=> $customer->id]) }}">
                                 @csrf
                                 @method('delete')
                                 <button type="submit"
-                                        class="btn btn-danger btn-outline-dark">Usuń
+                                        class="btn btn-danger">Usuń
                                 </button>
                             </form>
                         </td>
